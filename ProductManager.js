@@ -39,10 +39,9 @@ class ProductManager{
         console.log(productoId);
     }
 
-    updateProduct = async (id, update) => {
+    updateProduct = async ({id, ...update}) => {
 
-        let productos = await this.getProducts();
-        let productoId = productos.find(producto => producto.id == id);
+       await this.deleteProduct(id);
 
     }
 
